@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinema Booking System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="authForms">
+    <div id="loginFormDiv">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <button type="button" onclick="login(event)">Login</button>
+      </form>
+    </div>
+
+    <div id="registrationFormDiv">
+      <h2>Registration</h2>
+      <form id="registrationForm">
+        <label for="newUsername">Username:</label>
+        <input type="text" id="newUsername" required>
+
+        <label for="newPassword">Password:</label>
+        <input type="password" id="newPassword" required>
+
+        <button type="button" onclick="register(event)">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="bookingForm" style="display: none;">
+    <h2>Create a New Booking</h2>
+    <form id="createBookingForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="seatNumber">Seat Number:</label>
+      <input type="text" id="seatNumber" required>
+
+      <label for="time">Time:</label>
+      <input type="text" id="time" required>
+
+      <button type="submit" onclick="createBooking(event)">Book Now</button>
+    </form>
+  </div>
+
+  <div id="bookingList" style="display: none;">
+    <h2>Booking List</h2>
+    <ul id="bookings"></ul>
+  </div>
+
+  <div id="updateDeleteForm" style="display: none;">
+    <h2>Update or Delete Booking</h2>
+    <form id="updateDeleteBookingForm">
+      <label for="bookingId">Booking ID:</label>
+      <input type="text" id="bookingId" required>
+
+      <label for="newName">New Name:</label>
+      <input type="text" id="newName">
+
+      <label for="newSeatNumber">New Seat Number:</label>
+      <input type="text" id="newSeatNumber">
+
+      <label for="newTime">New Time:</label>
+      <input type="text" id="newTime">
+
+      <button type="button" onclick="updateBooking(event)">Update</button>
+      <button type="button" onclick="deleteBooking(event)">Delete</button>
+    </form>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+ 
+</body>
+</html>
+
